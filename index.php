@@ -4,23 +4,24 @@ require('./Property.php');
 use Pbo\Marketplace\Produk;
 
 // Objek
-$produk = new Produk('P0001', 'Laptop', 10000000, 5);
+$produk = new Produk();
+$produk ->setKode('P001')
+        ->setNama('Laptop')
+        ->setHarga(10000000)
+        ->setStok(5);
 
 // Output
-echo "Produk : " . $produk->nama;
+echo "Produk : " . $produk->getNama();
 echo "</br>";
 
-echo "Kode : " . $produk->kode;
+echo "Harga : " . $produk->getHarga();
 echo "</br>";
 
-echo "Harga : Rp." . $produk->harga;
-echo "</br>";
-
-echo "Stok : " . $produk->stok;
+echo "Stok : " . $produk->getStok();
 echo "</br>";
 
 echo "Pajak : " . $produk->pajak() . "%";
 echo "</br>";
 
-echo "Harga setelah Pajak : Rp. " . $produk->total();
+echo "Harga setelah Pajak : " . $produk->total();
 echo "</br>";
